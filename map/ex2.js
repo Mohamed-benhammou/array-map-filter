@@ -43,9 +43,33 @@ Expected OUTPUT for this sample
 */
 
 function getFoodCategories(foods) {
+  return foods.map(food => {
+    let negativ = '';
+    if (!food.isVegetarian) {
+      negativ = ' not';
+    }
+    return `${food.food} is${negativ} suitable for vegetarians`;
+  });
 }
-
-
-
+console.log(
+  getFoodCategories([
+    {
+      food: 'Bacon',
+      isVegetarian: false,
+    },
+    {
+      food: 'Sausage',
+      isVegetarian: false,
+    },
+    {
+      food: 'Tofu',
+      isVegetarian: true,
+    },
+    {
+      food: 'Chick Pea',
+      isVegetarian: true,
+    },
+  ])
+);
 // DON'T TOUCH THIS!
 module.exports = getFoodCategories;
