@@ -1,53 +1,48 @@
 const { expect } = require('chai');
 const getMoviesFreshness = require('../map/ex3.js');
 
-xdescribe('map - exercice 3', () => {
-
+describe('map - exercice 3', () => {
   it('getMoviesFreshness', () => {
-    expect(getMoviesFreshness(
-      [
-        {
-          name: 'Crazy Rich Asians',
-          rating: 93
-        },
-        {
-          name: 'Skyscraper',
-          rating: 46
-        },
-        {
-          name: 'Leave No Trace',
-          rating: 100
-        },
-        {
-          name: 'White Boy Rick',
-          rating: 60
-        }
-      ]
-    )).to.deep.equal(
-      [
+    expect(
+      getMoviesFreshness([
         {
           name: 'Crazy Rich Asians',
           rating: 93,
-          label: 'certified fresh'
         },
         {
           name: 'Skyscraper',
           rating: 46,
-          label: 'rotten'
         },
         {
           name: 'Leave No Trace',
           rating: 100,
-          label: 'certified fresh'
         },
         {
           name: 'White Boy Rick',
           rating: 60,
-          label: 'fresh'
-        }
-      ]
-    );
+        },
+      ])
+    ).to.deep.equal([
+      {
+        name: 'Crazy Rich Asians',
+        rating: 93,
+        label: 'certified fresh',
+      },
+      {
+        name: 'Skyscraper',
+        rating: 46,
+        label: 'rotten',
+      },
+      {
+        name: 'Leave No Trace',
+        rating: 100,
+        label: 'certified fresh',
+      },
+      {
+        name: 'White Boy Rick',
+        rating: 60,
+        label: 'fresh',
+      },
+    ]);
   });
-
 });
-
